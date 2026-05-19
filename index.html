@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Strength for Alishba</title>
+    <title>For Alishba | Always Full Strength</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
     <style>
@@ -13,7 +13,7 @@
             --electric-blue: #38bdf8;
             --soft-white: #f8fafc;
             --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.15);
         }
 
         * {
@@ -45,7 +45,7 @@
 
         .container {
             width: 100%;
-            max-width: 600px; /* Focused for mobile/tablet reading */
+            max-width: 600px; 
             margin: 0 auto;
             padding: 20px;
             display: flex;
@@ -53,16 +53,15 @@
             gap: 20px;
         }
 
-        /* Header / Hero Section */
         header {
             text-align: center;
-            padding: 60px 10px 20px;
+            padding: 50px 10px 10px;
             animation: fadeIn 1.5s ease-out;
         }
 
         .subtitle {
-            font-size: 0.85rem;
-            opacity: 0.8;
+            font-size: 0.8rem;
+            opacity: 0.7;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 8px;
@@ -78,15 +77,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            opacity: 0.8;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        /* Responsive Glass Cards */
         .glass-card {
             background: var(--glass);
             backdrop-filter: blur(15px);
@@ -95,35 +85,42 @@
             border-radius: 24px;
             padding: 25px;
             width: 100%;
-            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        /* Effort Bar Section */
+        /* DETERMINATION BAR - FIXED TO FULL */
         .fuel-section h3 { 
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 15px; 
             color: var(--electric-blue);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
         }
 
         .fuel-bar-container {
             width: 100%;
-            height: 10px;
-            background: rgba(255,255,255,0.1);
+            height: 14px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .fuel-fill {
-            width: 0%;
+            width: 100% !important; /* FORCED TO FULL */
             height: 100%;
-            background: linear-gradient(90deg, #0ea5e9, var(--electric-blue));
-            box-shadow: 0 0 15px var(--electric-blue);
-            transition: width 2.5s cubic-bezier(0.1, 0.5, 0.3, 1);
+            background: linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+            position: relative;
+            animation: shimmer 2s infinite linear;
+            background-size: 200% 100%;
         }
 
-        /* Quote Box */
+        @keyframes shimmer {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
         .quote-box {
             min-height: 80px;
             display: flex;
@@ -134,21 +131,16 @@
             font-size: 1.1rem;
             margin-bottom: 25px;
             line-height: 1.5;
-            padding: 0 10px;
         }
 
-        /* Buttons Layout */
         .button-group {
             display: flex;
-            flex-direction: column; /* Stack on small phones */
+            flex-direction: column;
             gap: 12px;
         }
 
         @media (min-width: 400px) {
-            .button-group {
-                flex-direction: row; /* Side by side on larger phones */
-                justify-content: center;
-            }
+            .button-group { flex-direction: row; justify-content: center; }
         }
 
         button {
@@ -160,48 +152,22 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: all 0.3s;
             flex: 1;
-            max-width: 250px;
         }
 
-        button:active {
-            transform: scale(0.95);
-        }
+        .btn-love { border-color: #f43f5e; color: #f43f5e; }
 
-        .btn-love {
-            border-color: #f43f5e;
-            color: #f43f5e;
-        }
-
-        /* Ahad's Message */
         .from-ahad {
-            border-left: 3px solid var(--electric-blue);
+            border-left: 4px solid var(--electric-blue);
             padding-left: 20px;
-        }
-
-        .from-ahad h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .from-ahad p {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            opacity: 0.9;
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.05), transparent);
         }
 
         footer {
             text-align: center;
             padding: 30px 10px 50px;
             font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            opacity: 0.5;
         }
 
         .heart {
@@ -215,13 +181,12 @@
 
         @keyframes floatHeart {
             0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-120px) scale(1.8) rotate(20deg); opacity: 0; }
+            100% { transform: translateY(-120px) scale(1.8); opacity: 0; }
         }
 
-        /* Adjustments for very small screens */
-        @media (max-width: 360px) {
-            h1 { font-size: 2.2rem; }
-            .glass-card { padding: 18px; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -231,51 +196,120 @@
 
     <div class="container">
         <header>
-            <span class="subtitle">For My Hardworking</span>
+            <span class="subtitle">A Message for</span>
             <h1>Alishba</h1>
-            <p class="hero-text">"The nights you spend working hard are the foundation of a future that’s going to be brighter than you can imagine."</p>
         </header>
 
-        <!-- Progress of her Effort -->
-        <div class="glass-card fuel-section">
-            <h3>Alishba's Determination</h3>
-            <div class="fuel-bar-container">
-                <div class="fuel-fill" id="fuelFill"></div>
+        <!-- THE FULL BAR SECTION -->
+        <div class="glass-card">
+            <div class="fuel-section">
+                <h3>Alishba's Determination Level</h3>
+                <div class="fuel-bar-container">
+                    <div class="fuel-fill"></div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; line-height: 1.4; opacity: 0.8;">
+                    <strong>Status: Maximum.</strong> <br>
+                    Even on the hardest nights, your hard work never drops. I am so proud of you.
+                </p>
             </div>
-            <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.7;">
-                Even when it's hard, you keep going. That is true strength.
-            </p>
         </div>
 
         <!-- Motivation Generator -->
         <div class="glass-card" style="text-align: center;">
             <div class="quote-box" id="quoteText">
-                "Exams are just a moment in time, but your potential is forever."
+                "Exams don't define you, Alishba. Your beautiful heart and hard work do."
             </div>
             <div class="button-group">
-                <button onclick="newQuote()">New Motivation</button>
+                <button onclick="newQuote()">More Motivation</button>
                 <button class="btn-love" onclick="sendLove(event)">Send Hug ❤️</button>
             </div>
         </div>
 
         <!-- Message from Ahad -->
         <div class="glass-card from-ahad">
-            <h3>A Message from Ahad</h3>
-            <p>
-                Alishba, I know these exams aren't going the way you wanted them to, but seeing you try so hard every night makes me so proud of you. <br><br>
-                Don't let a piece of paper tell you how smart you are. You are brilliant, you are resilient, and you are not alone. I'm right here with you through every late night.
+            <h3 style="margin-bottom:10px; color: var(--electric-blue);">From Ahad</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+                I know the exams aren't going the way you hoped, but Alishba, please don't be hard on yourself. I see you studying every night, and that effort is what makes you amazing. You are smarter than any grade. I'm right here with you, always.
             </p>
         </div>
 
         <footer>
-            Handcrafted with ❤️ by Ahad
+            Handcrafted for Alishba by Ahad
         </footer>
     </div>
 
     <script>
-        // 1. Optimized Canvas Background
+        // Particles Background
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
 
-        fun
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 60; i++) particles.push(new Particle());
+        }
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5;
+                this.speedX = Math.random() * 0.2 - 0.1;
+                this.speedY = Math.random() * 0.2 - 0.1;
+            }
+            update() {
+                this.x += this.speedX; this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) this.reset();
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.3)';
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+
+        initCanvas();
+        animate();
+        window.addEventListener('resize', initCanvas);
+
+        // Quotes
+        const quotes = [
+            "Your hard work tonight is building your dream tomorrow.",
+            "Take a deep breath, Alishba. You are doing enough.",
+            "One bad paper cannot stop a girl as strong as you.",
+            "I believe in you more than anything. You've got this.",
+            "Ahad is your biggest fan, especially on the tough days."
+        ];
+
+        function newQuote() {
+            const q = document.getElementById('quoteText');
+            q.style.opacity = 0;
+            setTimeout(() => {
+                q.innerText = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+                q.style.opacity = 1;
+            }, 300);
+        }
+
+        // Heart Effect
+        function sendLove(e) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            const x = e.clientX || (e.touches && e.touches[0].clientX);
+            const y = e.clientY || (e.touches && e.touches[0].clientY);
+            heart.style.left = (x - 12) + 'px';
+            heart.style.top = (y - 12) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1500);
+        }
+    </script>
+</body>
+</html>
